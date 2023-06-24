@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.board.mappers.BoardMapper">
+
+<!-- 목록 조회 -->
+<select id="boardList" resultType="com.example.board.dto.BoardDTO">
+    select * from tbl_board 
+    where tno > 0 
+    order by tno desc
+    limit 0,10
+</select>
+
+<!-- insert -->
+<insert id="boardInsert" parameterType="com.example.board.dto.BoardDTO">
+    insert into tbl_board (title, content, writer)
+    values (#{title}, #{content}, #{writer})
+    <selectKey resultType="long" keyProperty="tno" order="AFTER">
+        select last_insert_id()
+    </selectKey> <!-- 몇 번으로 등록 되었는 지 확인하기 위해 사용(최근 등록 된 번호(마지막 값) 찾는 것)-->
+
+</insert>
+
+
+</mapper>
