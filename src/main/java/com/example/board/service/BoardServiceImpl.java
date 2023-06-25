@@ -13,14 +13,42 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
-    private final BoardMapper boardMapper;
+    private final BoardMapper boardMapper; // boardMapper 사용 선언
 
     // 목록
     @Override
-    public List<BoardDTO> getList(BoardDTO boardDTO) {
-        return boardMapper.boardList(boardDTO);
+    public List<BoardDTO> boardList(BoardDTO boardDTO) {
+
+        List<BoardDTO> list = boardMapper.boardList(boardDTO);
+        return list;
     }
 
+    // 등록
+    @Override
+    public int regist(BoardDTO boardDTO) {
 
+        return boardMapper.modify(boardDTO);
+    }
+
+    // 조회
+    @Override
+    public BoardDTO read(int tno) {
+
+        return boardMapper.read(tno);
+    }
+
+    // 삭제
+    @Override
+    public int delete(int tno) {
+
+        return boardMapper.delete(tno);
+    }
+
+    // 수정
+    @Override
+    public int modify(BoardDTO boardDTO) {
+
+        return boardMapper.modify(boardDTO);
+    }
     
 }

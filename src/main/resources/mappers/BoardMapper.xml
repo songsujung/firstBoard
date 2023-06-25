@@ -25,17 +25,17 @@
 
 <!-- 조회 -->
 <select id="read" resultType="com.example.board.dto.BoardDTO">
-    select * from tbl_board where bno = #{bno}
+    select * from tbl_board where tno = #{tno}
 </select>
 
 <!-- 삭제 -->
 <delete id="delete">
-    delete from tbl_board where bno = #{bno}
+    delete from tbl_board where tno = #{tno}
 </delete>
 
 <!-- 수정 -->
-<update id+"modify">
-    update tbl_board set title = #{title}, content = #{content}, updateDate = now() where bno = #{bno}
+<update id="modify">
+    update tbl_board set title = #{title}, content = #{content}, updateDate = now() where tno = #{tno}
 </update>
 
 

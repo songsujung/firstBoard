@@ -16,10 +16,10 @@ public interface BoardMapper {
     int regist(BoardDTO boardDTO);
 
     // 조회
-    BoardDTO read(int bno);
+    BoardDTO read(int tno);
 
     // 삭제
-    int delete(int bno);
+    int delete(int tno);
 
     // 수정
     int modify(BoardDTO boardDTO);
