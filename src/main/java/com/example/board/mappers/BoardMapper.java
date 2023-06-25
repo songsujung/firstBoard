@@ -12,7 +12,17 @@ public interface BoardMapper {
     // 전체리스트
     List<BoardDTO> boardList(BoardDTO boardDTO);
 
-    // insert list
-    int boardInsert(BoardDTO boardDTO);
+    // 등록
+    int regist(BoardDTO boardDTO);
+
+    // 조회
+    BoardDTO read(int bno);
+
+    // 삭제
+    int delete(int bno);
+
+    // 수정
+    int modify(BoardDTO boardDTO);
+
 
 }

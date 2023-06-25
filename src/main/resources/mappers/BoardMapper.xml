@@ -13,8 +13,8 @@
     limit 0,10
 </select>
 
-<!-- insert -->
-<insert id="boardInsert" parameterType="com.example.board.dto.BoardDTO">
+<!-- 등록 -->
+<insert id="regist">
     insert into tbl_board (title, content, writer)
     values (#{title}, #{content}, #{writer})
     <selectKey resultType="long" keyProperty="tno" order="AFTER">
@@ -22,6 +22,21 @@
     </selectKey> <!-- 몇 번으로 등록 되었는 지 확인하기 위해 사용(최근 등록 된 번호(마지막 값) 찾는 것)-->
 
 </insert>
+
+<!-- 조회 -->
+<select id="read" resultType="com.example.board.dto.BoardDTO">
+    select * from tbl_board where bno = #{bno}
+</select>
+
+<!-- 삭제 -->
+<delete id="delete">
+    delete from tbl_board where bno = #{bno}
+</delete>
+
+<!-- 수정 -->
+<update id+"modify">
+    update tbl_board set title = #{title}, content = #{content}, updateDate = now() where bno = #{bno}
+</update>
 
 
 </mapper>

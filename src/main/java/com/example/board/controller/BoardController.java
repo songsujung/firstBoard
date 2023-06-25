@@ -11,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/board/")
 public class BoardController {
 
+    // 목록
     @GetMapping("list")
     public void getList(){
         

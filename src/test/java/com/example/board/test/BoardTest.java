@@ -25,7 +25,7 @@ public class BoardTest {
     }
 
     @Test
-    public void insertTest() {
+    public void registTest() {
         BoardDTO boardDTO = BoardDTO.builder()
         .title("title")
         .content("content")
@@ -33,7 +33,7 @@ public class BoardTest {
         .build();
 
 
-        int count = boardMapper.boardInsert(boardDTO);
+        int count = boardMapper.regist(boardDTO);
 
         Assertions.assertEquals(count, 1); // count 값이 1일 때에 실행
 
