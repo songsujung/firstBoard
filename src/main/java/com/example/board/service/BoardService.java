@@ -10,16 +10,16 @@ import com.example.board.dto.BoardDTO;
 public interface BoardService {
 
     // 전체리스트
-    public List<BoardDTO> boardList(BoardDTO boardDTO);
+    public List<BoardDTO> boardList();
 
     // 등록
     public int regist(BoardDTO boardDTO);
 
     // 조회
-    public BoardDTO read(int tno);
+    public BoardDTO read(Long tno);
 
     // 삭제
-     public int delete(int tno);
+    public int delete(Long tno);
 
     // 수정
     public int modify(BoardDTO boardDTO);

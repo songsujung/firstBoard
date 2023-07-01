@@ -10,16 +10,16 @@ import com.example.board.dto.BoardDTO;
 public interface BoardMapper {
     
     // 전체리스트
-    List<BoardDTO> boardList(BoardDTO boardDTO);
+    List<BoardDTO> boardList();
 
     // 등록
     int regist(BoardDTO boardDTO);
 
     // 조회
-    BoardDTO read(int tno);
+    BoardDTO read(long tno);
 
     // 삭제
-    int delete(int tno);
+    int delete(long tno);
 
     // 수정
     int modify(BoardDTO boardDTO);
