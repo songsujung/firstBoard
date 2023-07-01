@@ -2,23 +2,26 @@ package com.example.board.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.example.board.dto.BoardDTO;
 
+@Transactional
 public interface BoardService {
 
     // 전체리스트
-    List<BoardDTO> boardList(BoardDTO boardDTO);
+    public List<BoardDTO> boardList(BoardDTO boardDTO);
 
     // 등록
-    int regist(BoardDTO boardDTO);
+    public int regist(BoardDTO boardDTO);
 
     // 조회
-    BoardDTO read(int tno);
+    public BoardDTO read(int tno);
 
     // 삭제
-    int delete(int tno);
+     public int delete(int tno);
 
     // 수정
-    int modify(BoardDTO boardDTO);
+    public int modify(BoardDTO boardDTO);
     
 }
